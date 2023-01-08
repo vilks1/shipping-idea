@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "1a844979-5739-45ba-9050-09901fb52166",
+		"name": "Shipping idea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET parcels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:40000/parcels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "40000",
+					"path": [
+						"parcels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST parcels",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sku\": \"12211\",\n    \"description\": \"Ilus pakk\",\n    \"deliveryDate\": \"2021-12-30\",\n    \"shippingStreet\": \"test\",\n    \"shippingTown\": \"test\",\n    \"shippingCountry\": \"Finland\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:40000/parcels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "40000",
+					"path": [
+						"parcels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:40000/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "40000",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

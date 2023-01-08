@@ -1,0 +1,43 @@
+<h1>Parcels</h1>
+<div class="parcel-list">
+  <form class="example-form">
+    <app-country-select (countryValueUpdate)="setCountry($event)"></app-country-select>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Description" #descriptionInput>
+    </mat-form-field>
+  </form>
+
+  <mat-table class="parcels-table mat-elevation-z8" [dataSource]="dataSource">
+      <ng-container matColumnDef="sku">
+          <mat-header-cell *matHeaderCellDef>SKU</mat-header-cell>
+          <mat-cell *matCellDef="let parcel">{{parcel.sku}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+          <mat-cell class="description-cell"
+                    *matCellDef="let parcel">{{parcel.description}}</mat-cell>
+
+      </ng-container>
+
+      <ng-container matColumnDef="shippingAddress">
+          <mat-header-cell *matHeaderCellDef>Shipping Address</mat-header-cell>
+          <mat-cell class="shippingAddress-cell"
+                    *matCellDef="let parcel">{{parcel.shippingStreet}}, {{parcel.shippingTown}}, {{parcel.shippingCountry}}</mat-cell>
+
+      </ng-container>
+
+      <ng-container matColumnDef="deliveryDate">
+          <mat-header-cell *matHeaderCellDef>Delivery Date</mat-header-cell>
+          <mat-cell class="duration-cell"
+                    *matCellDef="let parcel">{{parcel.deliveryDate | date}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+  </mat-table>
+</div>
