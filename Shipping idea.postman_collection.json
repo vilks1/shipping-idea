@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:40000/parcels",
+					"raw": "http://localhost:40000/parcels?country=Finland&description=Ilus",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -19,6 +19,16 @@
 					"port": "40000",
 					"path": [
 						"parcels"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Finland"
+						},
+						{
+							"key": "description",
+							"value": "Ilus"
+						}
 					]
 				}
 			},
